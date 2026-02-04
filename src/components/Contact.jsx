@@ -10,8 +10,8 @@ const socialLinks = [
     },
     {
         name: "Email",
-        value: "assad.allah630@email.com",
-        href: "mailto:assad.allah630@email.com",
+        value: "contact@asad-allah.com",
+        href: "mailto:contact@asad-allah.com",
         icon: <Mail className="w-6 h-6" />
     },
     {
