@@ -7,7 +7,7 @@ import StickyNav from "@/components/ui/StickyNav";
 import CinematicPreloader from "@/components/ui/CinematicPreloader";
 import Hero from "@/components/Hero";
 
-import ProjectsBento from "@/components/ProjectsBento";
+import FloatingLaptopShowcase from "@/components/FloatingLaptopShowcase";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
 import Education from "@/components/Education";
 import SkillsMatrix from "@/components/SkillsMatrix";
@@ -24,7 +24,7 @@ function App() {
       </AnimatePresence>
 
       {!loading && (
-        <main className="min-h-screen bg-[#FAFAFA] text-gray-900 antialiased overflow-x-hidden selection:bg-yellow-300 selection:text-black relative">
+        <main className="min-h-screen bg-[#FAFAFA] text-gray-900 antialiased overflow-clip selection:bg-yellow-300 selection:text-black relative">
           <CustomCursor />
           <StickyNav />
           <GrainOverlay />
@@ -35,7 +35,7 @@ function App() {
             <ExperienceTimeline />
             <Education />
             <SkillsMatrix />
-            <ProjectsBento />
+            <FloatingLaptopShowcase />
             <BusinessAnalysis />
             <Contact />
           </div>
