@@ -7,7 +7,7 @@ const works = [
         id: "01",
         name: "VocabMaster",
         cat: "AI Platform",
-        desc: "Next-gen language learning with RAG & Agentic workflows.",
+        desc: "A next-generation language learning platform powered by RAG and Agentic workflows. It personalizes curriculum in real-time based on learner progress, making mastery faster and more intuitive.",
         link: "https://github.com/assadAllah630/vocab-web",
         image: "/images/vocab_showcase.png?v=7"
     },
@@ -15,7 +15,7 @@ const works = [
         id: "02",
         name: "Sheikh Al Jabal Store",
         cat: "E-Commerce",
-        desc: "Enterprise Flutter application with Clean Architecture.",
+        desc: "An enterprise-grade Flutter application built with Clean Architecture. Features robust state management, scalable product catalogs, and a seamless checkout experience designed for high performance.",
         link: "https://github.com/mahmoodhamdi/TStore",
         image: "/images/tstore_showcase.png"
     },
@@ -23,7 +23,7 @@ const works = [
         id: "03",
         name: "Backup POS",
         cat: "System Utility",
-        desc: "Offline-first resilience engineering for retail.",
+        desc: "Offline-first retail resilience engineering. Ensures business continuity with local data synchronization, allowing transactions to proceed smoothly even during internet outages.",
         link: "https://github.com/assadAllah630/Backup_POS",
         image: "/images/backup_pos_showcase.png"
     }
@@ -55,39 +55,40 @@ const FloatingLaptopShowcase = () => {
 
     return (
         <section id="work" className="bg-[#FAFAFA] relative">
-            <div className="py-24 px-6 md:px-12 relative z-10">
-                <div className="container max-w-6xl mx-auto text-center mb-12">
-                    <span className="text-xs font-mono font-bold text-gray-400 uppercase tracking-[0.3em] mb-4 block">
-                        03 / Impact
-                    </span>
-                    <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-gray-900">
-                        Selected Works
-                    </h2>
-                </div>
-            </div>
-
-            {/* Scrollable Container with defined height */}
+            
+            {/* Scrollable Container - Drastically reduced height for faster transitions */}
             <div 
                 ref={containerRef} 
                 className="relative"
-                style={{ height: `${(works.length + 0.5) * 65}vh` }}
+                style={{ height: `${(works.length + 0.5) * 40}vh` }} 
             >
                 {/* Fixed Sticky Viewport */}
-                <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
-                    <div className="container max-w-7xl mx-auto px-6 md:px-12 w-full h-full flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-24">
+                <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col items-center justify-center py-8">
+                    
+                    {/* Header - Now part of the sticky container (Fixes spacing issue) */}
+                    <div className="container max-w-6xl mx-auto text-center mb-4 lg:mb-8 flex-none z-20">
+                        <span className="text-xs font-mono font-bold text-gray-400 uppercase tracking-[0.3em] mb-2 block">
+                            03 / Impact
+                        </span>
+                        <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-gray-900">
+                            Selected Works
+                        </h2>
+                    </div>
+
+                    <div className="container max-w-[90rem] mx-auto px-4 w-full flex-1 flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 min-h-0">
                         
-                        {/* 3D Floating Laptop */}
-                        <div className="relative w-full lg:w-3/5 perspective-[2000px]">
+                        {/* 3D Floating Laptop - Make it BIGGER */}
+                        <div className="relative w-full lg:w-[65%] perspective-[2000px] flex items-center justify-center">
                             <motion.div
                                 style={{ y: laptopY }}
-                                className="relative transform-preserve-3d"
+                                className="relative transform-preserve-3d w-full max-w-4xl" 
                             >
                                 {/* Floating Animation Wrapper */}
                                 <motion.div
                                     animate={{
-                                        y: [0, -15, 0],
-                                        rotateX: [0, 2, 0],
-                                        rotateY: [-2, 2, -2]
+                                        y: [0, -10, 0],
+                                        rotateX: [0, 1, 0],
+                                        rotateY: [-1, 1, -1]
                                     }}
                                     transition={{
                                         duration: 6,
@@ -98,23 +99,23 @@ const FloatingLaptopShowcase = () => {
                                 >
                                     {/* Shadow */}
                                     <div 
-                                        className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-[85%] h-12 bg-black/10 blur-3xl opacity-60 rounded-full"
+                                        className="absolute -bottom-16 left-1/2 -translate-x-1/2 w-[85%] h-12 bg-black/10 blur-3xl opacity-60 rounded-full"
                                         style={{ transform: "rotateX(90deg) translateZ(-50px)" }}
                                     />
 
                                     {/* Laptop Body - Light/Silver Theme */}
                                     <div 
-                                        className="relative rounded-2xl p-[2px] bg-gradient-to-b from-gray-200 via-gray-300 to-gray-400 shadow-2xl overflow-hidden transform-preserve-3d"
+                                        className="relative rounded-[2rem] p-[3px] bg-gradient-to-b from-gray-200 via-gray-300 to-gray-400 shadow-2xl overflow-hidden transform-preserve-3d"
                                     >
                                         {/* Texture */}
                                         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-30 mix-blend-multiply" />
                                         
                                         {/* Inner Bezel */}
-                                        <div className="relative bg-[#1a1a1a] rounded-[14px] p-2 md:p-3 overflow-hidden">
+                                        <div className="relative bg-[#1a1a1a] rounded-[28px] p-3 md:p-4 overflow-hidden">
                                             {/* Screen Container */}
-                                            <div className="relative aspect-[16/10] bg-black rounded-lg overflow-hidden border border-gray-800">
+                                            <div className="relative aspect-[16/10] bg-black rounded-xl overflow-hidden border border-gray-800">
                                                 
-                                                {/* Screen Content - Fade Transitions */}
+                                                {/* Screen Content - Pure Fade Transitions */}
                                                 <div className="absolute inset-0 z-10 bg-black">
                                                     <AnimatePresence mode="wait">
                                                         <motion.div
@@ -122,7 +123,7 @@ const FloatingLaptopShowcase = () => {
                                                             initial={{ opacity: 0 }}
                                                             animate={{ opacity: 1 }}
                                                             exit={{ opacity: 0 }}
-                                                            transition={{ duration: 0.6, ease: "linear" }}
+                                                            transition={{ duration: 0.4, ease: "linear" }} 
                                                             className="absolute inset-0 w-full h-full"
                                                         >
                                                             <div className="relative w-full h-full">
@@ -132,7 +133,7 @@ const FloatingLaptopShowcase = () => {
                                                                     className="w-full h-full object-cover"
                                                                 />
                                                                 {/* Cinematic Overlay */}
-                                                                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-40 mix-blend-multiply" />
+                                                                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-40 mix-blend-multiply" />
                                                             </div>
                                                         </motion.div>
                                                     </AnimatePresence>
@@ -142,21 +143,21 @@ const FloatingLaptopShowcase = () => {
                                                 <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-30 pointer-events-none z-20" />
                                                 
                                                 {/* Camera */}
-                                                <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-[#0a0a0a] rounded-full z-30 ring-1 ring-gray-700/50" />
+                                                <div className="absolute top-2 left-1/2 -translate-x-1/2 w-2 h-2 bg-[#0a0a0a] rounded-full z-30 ring-1 ring-gray-700/50" />
                                             </div>
                                         </div>
                                     </div>
 
                                     {/* Laptop Base (Keyboard Area) */}
                                     <div 
-                                        className="relative -mt-1 h-3 md:h-5 mx-[3%] bg-gradient-to-b from-gray-300 to-gray-400 rounded-b-xl shadow-lg transform-preserve-3d"
+                                        className="relative -mt-2 h-4 md:h-6 mx-[3%] bg-gradient-to-b from-gray-300 to-gray-400 rounded-b-2xl shadow-lg transform-preserve-3d"
                                         style={{ 
                                             transform: "rotateX(-70deg)", 
                                             transformOrigin: "top"
                                         }}
                                     >
                                         {/* Touchpad Indent */}
-                                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-0.5 bg-gray-400/50 rounded-full" />
+                                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-0.5 bg-gray-400/50 rounded-full" />
                                     </div>
                                     
                                 </motion.div>
@@ -164,17 +165,17 @@ const FloatingLaptopShowcase = () => {
                         </div>
 
                         {/* Project Info Panel */}
-                        <div className="w-full lg:w-2/5 relative h-64 lg:h-auto flex flex-col justify-center text-center lg:text-left">
+                        <div className="w-full lg:w-[30%] relative h-auto flex flex-col justify-center text-center lg:text-left z-30">
                             <AnimatePresence mode="wait">
                                 <motion.div
                                     key={activeIndex}
-                                    initial={{ opacity: 0, y: 10, filter: "blur(4px)" }}
-                                    animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                                    exit={{ opacity: 0, y: -10, filter: "blur(4px)" }}
-                                    transition={{ duration: 0.5, ease: "easeOut" }}
+                                    initial={{ opacity: 0, x: 20 }} 
+                                    animate={{ opacity: 1, x: 0 }}
+                                    exit={{ opacity: 0, x: -20 }}
+                                    transition={{ duration: 0.3, ease: "easeOut" }} 
                                     className="flex flex-col items-center lg:items-start"
                                 >
-                                    <div className="flex items-center gap-3 mb-6">
+                                    <div className="flex items-center gap-3 mb-4">
                                         <span className="text-xs font-mono font-bold text-gray-400 uppercase tracking-widest border border-gray-200 px-3 py-1 rounded-full">
                                             Project 0{activeIndex + 1}
                                         </span>
@@ -184,11 +185,11 @@ const FloatingLaptopShowcase = () => {
                                         </span>
                                     </div>
 
-                                    <h3 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-6 tracking-tighter leading-none">
+                                    <h3 className="text-3xl md:text-5xl font-black text-gray-900 mb-4 tracking-tighter leading-none">
                                         {works[activeIndex].name}
                                     </h3>
 
-                                    <p className="text-lg text-gray-500 leading-relaxed mb-8 max-w-md font-light">
+                                    <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-6 font-light">
                                         {works[activeIndex].desc}
                                     </p>
 
@@ -196,7 +197,7 @@ const FloatingLaptopShowcase = () => {
                                         href={works[activeIndex].link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="group inline-flex items-center gap-3 px-8 py-3 bg-gray-900 text-white font-medium text-sm tracking-wide rounded-full hover:bg-black transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                                        className="group inline-flex items-center gap-2 px-6 py-2.5 bg-gray-900 text-white font-medium text-sm tracking-wide rounded-full hover:bg-black transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
                                     >
                                         View Project
                                         <ArrowUpRight className="w-4 h-4 group-hover:rotate-45 transition-transform duration-300" />
@@ -205,11 +206,11 @@ const FloatingLaptopShowcase = () => {
                             </AnimatePresence>
 
                             {/* Progress Indicators */}
-                            <div className="flex justify-center lg:justify-start gap-3 mt-12">
+                            <div className="flex justify-center lg:justify-start gap-2 mt-8">
                                 {works.map((_, i) => (
                                     <div
                                         key={i}
-                                        className={`h-1.5 rounded-full transition-all duration-500 ${
+                                        className={`h-1.5 rounded-full transition-all duration-300 ${
                                             i === activeIndex 
                                                 ? "w-8 bg-gray-900" 
                                                 : "w-1.5 bg-gray-200"
