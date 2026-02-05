@@ -73,7 +73,8 @@ const BusinessAnalysis = () => {
     });
 
     // "GRAVITY WELL" - Unstoppable Momentum Scroll
-    // Once crossing 0.50, the user is pulled to the destination.
+    // Once crossing 0.75, the user is pulled to the destination.
+    // DELAYED to give 75% of section for reading documents.
     // Direction at crossing determines target.
     const lockAndAnimateTo = (target) => {
         setIsLocked(true);
@@ -112,12 +113,12 @@ const BusinessAnalysis = () => {
         const previous = scrollYProgress.getPrevious();
         if (previous === undefined) return;
         
-        // Crossing 0.50 DOWNWARD -> Go to Contact
-        if (previous < 0.50 && latest >= 0.50) {
+        // Crossing 0.75 DOWNWARD -> Go to Contact (75% reading zone)
+        if (previous < 0.75 && latest >= 0.75) {
             lockAndAnimateTo('contact');
         }
-        // Crossing 0.50 UPWARD -> Go back to Analysis top
-        if (previous > 0.50 && latest <= 0.50) {
+        // Crossing 0.75 UPWARD -> Go back to Analysis top
+        if (previous > 0.75 && latest <= 0.75) {
             lockAndAnimateTo('analysis-top');
         }
     });
