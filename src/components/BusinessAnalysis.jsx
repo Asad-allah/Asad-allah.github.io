@@ -117,8 +117,8 @@ const BusinessAnalysis = () => {
         if (previous < 0.75 && latest >= 0.75) {
             lockAndAnimateTo('contact');
         }
-        // Crossing 0.75 UPWARD -> Go back to Analysis top
-        if (previous > 0.75 && latest <= 0.75) {
+        // Crossing 0.92 UPWARD -> Go back to Analysis (just a little scroll from footer)
+        if (previous > 0.92 && latest <= 0.92) {
             lockAndAnimateTo('analysis-top');
         }
     });
