@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { motion as Motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
 /**
@@ -56,9 +56,9 @@ const RevealWord = ({ word, i, step, range, progress }) => {
   const y = useTransform(progress, [start, end], [12, 0]);
   
   return (
-    <motion.span style={{ opacity, y }} className="relative inline-block">
+    <Motion.span style={{ opacity, y }} className="relative inline-block">
       {word}
-    </motion.span>
+    </Motion.span>
   );
 };
 
@@ -128,7 +128,7 @@ const FloatingScene = ({ totalProgress }) => {
            totalProgress={totalProgress} 
         />
       ))}
-      <div className="absolute inset-0 opacity-[0.06] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-multiply" />
+      <div className="absolute inset-0 opacity-[0.06] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZpZXdCb3g9IjAgMCA3MDAgNzAwIiB3aWR0aD0iNzAwIiBoZWlnaHQ9IjcAwIiBvcGFjaXR5PSIxIj48ZGVmcz48ZmlsdGVyIGlkPSJmIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iMC42NSIgbnVtT2N0YXZlcz0iMyIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjwvZGVmcz48cmVjdCB3aWR0aD0iNzAwIiBoZWlnaHQ9IjcAwIiBmaWxsPSIjMDAwMDAwIi8+PHJlY3Qgd2lkdGg9IjcAwIiBoZWlnaHQ9IjcAwIiBmaWxsPSIjZmZmZmZmIiBmaWx0ZXI9InVybCgjZikiIG9wYWNpdHk9IjAuMjUiLz48L3N2Zz4=')] mix-blend-multiply" />
     </div>
   );
 };
@@ -147,7 +147,7 @@ const ProjectBackgroundSet = ({ work, index, totalProgress }) => {
   const grayscale = useTransform(distance, [-0.8, 0, 0.8], ["100%", "0%", "100%"]); 
 
   return (
-    <motion.div 
+    <Motion.div 
       className="absolute inset-0 will-change-transform" 
       style={{ 
         opacity, 
@@ -159,7 +159,7 @@ const ProjectBackgroundSet = ({ work, index, totalProgress }) => {
        <FloatingObject type={work.shapes[0]} color={work.color} baseX="80%" baseY="15%" animateX={[-30, 30]} animateY={[-15, 15]} duration={8} distance={distance} />
        <FloatingObject type={work.shapes[1] || "cube"} color={work.color} baseX="10%" baseY="65%" animateX={[20, -20]} animateY={[30, -30]} duration={10} distance={distance} />
        <FloatingObject type={work.shapes[2] || "helix"} color={work.color} baseX="15%" baseY="20%" animateX={[-20, 20]} animateY={[-20, 20]} duration={9} distance={distance} />
-    </motion.div>
+    </Motion.div>
   );
 };
 
@@ -168,18 +168,18 @@ const FloatingObject = ({ type, color, baseX, baseY, animateX, animateY, duratio
   const yShift = useTransform(distance, [-1, 1], [150, -150]);
   
   return (
-    <motion.div
+    <Motion.div
       className="absolute w-40 h-40 md:w-64 md:h-64 opacity-80"
       style={{ left: baseX, top: baseY, y: yShift }}
     >
-      <motion.div
+      <Motion.div
         animate={{ x: animateX, y: animateY }}
         transition={{ repeat: Infinity, repeatType: "mirror", duration: duration, ease: "easeInOut" }}
         className="w-full h-full"
       >
         <AbstractShape type={type} color={color} className="w-full h-full drop-shadow-xl" />
-      </motion.div>
-    </motion.div>
+      </Motion.div>
+    </Motion.div>
   )
 }
 
@@ -210,7 +210,7 @@ const ProjectCardLayer = ({ work, index, totalProgress }) => {
   const contentOpacity = useTransform(layerProgress, [-0.15, 0], [0, 1]);
 
   return (
-    <motion.div
+    <Motion.div
       style={{ opacity, scale, y, display, zIndex: 10 }}
       className="absolute inset-0 flex items-center justify-center pointer-events-none will-change-transform" 
     >
@@ -236,7 +236,7 @@ const ProjectCardLayer = ({ work, index, totalProgress }) => {
             {work.id}
           </div>
 
-          <motion.div style={{ y: contentY, opacity: contentOpacity }}>
+          <Motion.div style={{ y: contentY, opacity: contentOpacity }}>
             <div className="flex items-center gap-2 md:gap-3 mb-3 md:mb-6">
                <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full" style={{ backgroundColor: work.color }} />
                <span className="font-mono text-[10px] md:text-sm font-bold uppercase tracking-wider text-gray-500">
@@ -269,10 +269,10 @@ const ProjectCardLayer = ({ work, index, totalProgress }) => {
                   View Case Study
               </span>
             </a>
-          </motion.div>
+          </Motion.div>
         </div>
       </div>
-    </motion.div>
+    </Motion.div>
   );
 };
 
@@ -281,7 +281,7 @@ const ProgressDot = ({ index, totalProgress }) => {
   const width = useTransform(isActive, (active) => active ? 24 : 6);
   const color = useTransform(isActive, (active) => active ? "#111827" : "#E5E7EB");
   return (
-    <motion.div 
+    <Motion.div 
       className="h-1.5 rounded-full transition-all duration-300"
       style={{ width, backgroundColor: color }} 
     />
@@ -348,13 +348,13 @@ const ProjectsPinned = () => {
         </div>
 
         {/* Hint */}
-        <motion.div 
+        <Motion.div 
           style={{ opacity: useTransform(totalProgress, [0, 0.5], [1, 0]) }}
           className="absolute bottom-6 left-1/2 -translate-x-1/2 text-center pointer-events-none z-40 opacity-40 mix-blend-darken"
         >
            <div className="w-px h-10 bg-gray-400 mx-auto mb-2 animate-bounce" />
            <span className="text-[10px] font-mono uppercase tracking-widest text-gray-500">Scroll</span>
-        </motion.div>
+        </Motion.div>
 
       </div>
     </section>

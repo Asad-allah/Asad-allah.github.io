@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion as Motion } from "framer-motion";
 
 // Enhanced UI Components
 import EnhancedCursor from "@/components/ui/EnhancedCursor";
@@ -34,7 +34,7 @@ function App() {
     <div className="bg-[#FAFAFA] min-h-screen">
       <AnimatePresence mode="wait">
         {isLoading && (
-          <motion.div
+          <Motion.div
             key="loader"
             className="fixed inset-0 z-[9999] bg-black flex items-center justify-center"
             initial={{ opacity: 1 }}
@@ -45,39 +45,39 @@ function App() {
             }}
           >
             <div className="text-center">
-              <motion.div
+              <Motion.div
                 className="text-4xl md:text-6xl font-black text-white font-mono tracking-tighter mb-8"
                 initial={{ opacity: 0, filter: "blur(10px)" }}
                 animate={{ opacity: 1, filter: "blur(0px)" }}
                 transition={{ duration: 0.5 }}
               >
                 {"INITIALIZING".split("").map((char, i) => (
-                  <motion.span
+                  <Motion.span
                     key={i}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.05 }}
                   >
                     {char}
-                  </motion.span>
+                  </Motion.span>
                 ))}
-              </motion.div>
+              </Motion.div>
 
-              <motion.div
+              <Motion.div
                 className="w-48 h-1 bg-gray-800 mx-auto overflow-hidden rounded-full"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3 }}
               >
-                <motion.div
+                <Motion.div
                   className="h-full bg-yellow-400"
                   initial={{ width: 0 }}
                   animate={{ width: "100%" }}
                   transition={{ duration: 1.5, ease: "easeInOut" }}
                 />
-              </motion.div>
+              </Motion.div>
             </div>
-          </motion.div>
+          </Motion.div>
         )}
       </AnimatePresence>
 
