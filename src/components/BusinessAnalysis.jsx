@@ -56,7 +56,7 @@ const BusinessAnalysis = () => {
     return (
         <section id="analysis" className="py-32 px-6 md:px-12 bg-[#FAFAFA] text-gray-900 border-t border-gray-100 relative">
             {/* Subtle Grid Pattern Background */}
-            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none"></div>
+            <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`}}></div>
 
             <div className="container max-w-7xl mx-auto relative z-10">
 
