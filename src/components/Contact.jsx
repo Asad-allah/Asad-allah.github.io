@@ -80,7 +80,7 @@ const Contact = () => {
                 {/* FOOTER */}
                 <div className="mt-40 pt-8 flex flex-col md:flex-row justify-between items-center text-xs font-mono text-gray-600 uppercase tracking-widest">
                     <p>© 2026 Assad Allah Alebrahim</p>
-                    <p>Designed in Beirut</p>
+                    <p>Designed in Damascus</p>
                 </div>
             </div>
         </section>

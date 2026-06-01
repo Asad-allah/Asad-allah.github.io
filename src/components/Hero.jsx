@@ -24,8 +24,8 @@ const Hero = () => {
                 className="absolute md:fixed top-12 left-0 right-0 px-6 md:px-12 flex justify-between items-start text-sm md:text-base font-mono font-medium tracking-widest text-gray-500 uppercase z-50 pointer-events-none w-full"
             >
                 <div>
-                    <p>Beirut, Lebanon</p>
-                    <p>33.8938° N, 35.5018° E</p>
+                    <p>Damascus, Syria</p>
+                    <p>33.5138° N, 36.2765° E</p>
                 </div>
                 <div className="text-right">
                     <p>AI Engineer</p>
